@@ -12,6 +12,10 @@ To always use with ssh (recommended) add this alias to your `.zshrc`:
 ```
 alias ssh='sshukh'
 ```
+Zsh may tell you that the plugin is disabled until permissions are fixed. Just run the command it suggests.
+```
+$ compaudit | xargs chmod g-w,o-w
+```
 
 ## Usage
 Let's connect to an ip that changed hosts:
