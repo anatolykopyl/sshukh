@@ -22,7 +22,7 @@ sshukh () {
       read yn"?Update known_hosts? [y/n] "
       case $yn in
         [Yy]* ) ssh-keygen -R $host && \ssh "$@"; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) break;;
         * ) echo "Please answer y or n.";;
       esac
     done
