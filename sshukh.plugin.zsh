@@ -14,9 +14,10 @@
 # ------------------------------------------------------------------------------
 
 sshukh () {
-  output=$(\ssh "$@")
-  if [ $? -eq 255 ];
-  then
+  output=$(\ssh "$@" 2>&1)
+  echo $output
+  error=$(echo $output | tail -1)
+  if [[ "$error" == "Host key verification failed."* ]]; then
     host=$(cut -d'@' -f2 <<< $1)
     while true; do
       read yn"?Update known_hosts? [y/n] "
