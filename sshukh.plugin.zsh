@@ -14,8 +14,7 @@
 # ------------------------------------------------------------------------------
 
 sshukh () {
-  output=$(\ssh "$@" 2>&1)
-  echo $output
+  output=$(\ssh "$@" 2>&1 | tee /dev/tty)
   error=$(echo $output | tail -1)
   if [[ "$error" == "Host key verification failed."* ]]; then
     host=$(cut -d'@' -f2 <<< $1)
