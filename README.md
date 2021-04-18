@@ -1,13 +1,19 @@
-# sshukh-zsh-plugin
+# sshukh zsh plugin
 *SSH Update Known Hosts*
 
 Prompts to update `known_hosts` file for you if needed.
 
-To install, run the following command:
+## Installation:
 
+**With Oh-my-zsh:** run the following command:
 ```
-$ git clone https://github.com/anatolykopyl/sshukh-zsh-plugin.git $HOME/.oh-my-zsh/custom/plugins/sshukh
+$ git clone https://github.com/anatolykopyl/sshukh.git $HOME/.oh-my-zsh/custom/plugins/sshukh
 ```
+**With Antigen:** add the following to your `.zshrc`:
+```
+antigen bundle anatolykopyl/sshukh
+```
+
 To always use with ssh (recommended) add this alias to your `.zshrc`:
 ```
 alias ssh='sshukh'
